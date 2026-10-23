@@ -1,0 +1,89 @@
+
+@page { margin: 2cm; }
+
+* {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    display: block;
+}
+
+header, nav, aside, footer, .vyrez, .biela, .logo, .menu-toggle, .spat-nav, .koleso { 
+    display: none !important; 
+}
+article > header.hlavicka-clanku { 
+    display: block !important; 
+    border: 0; 
+}
+
+main { 
+    max-width: 100%; 
+    padding: 0; 
+    margin: 0; 
+    display: block; 
+}
+.rozlozenie { 
+    display: block; 
+}
+
+h1 { 
+    font-size: 20pt; 
+    text-align: left; 
+    margin: 0 0 0.5cm; 
+}
+h2 { 
+    font-size: 15pt; 
+    margin: 0.6cm 0 0.2cm; 
+}
+p, .odsek { 
+    text-align: left; 
+    font-weight: normal; 
+    font-family: Georgia, 'Times New Roman', serif; 
+}
+ol, ul { 
+    font-weight: normal;
+     margin-left: 1cm; 
+}
+
+.tabulka { 
+    padding: 0; 
+    border-radius: 0; 
+}
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+th, td { 
+    border: 1pt solid #000; 
+    padding: 0.2cm; 
+    font-size: 11pt; 
+    font-weight: normal; 
+}
+th { 
+    font-weight: bold; 
+}
+
+figure { 
+    page-break-inside: avoid; 
+}
+img { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 0; 
+}
+
+a { 
+    text-decoration: underline; 
+}
+main a[href^="http"]::after { 
+    content: " (" attr(href) ")"; font-size: 10pt; 
+}
