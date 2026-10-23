@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t d">
+<title id="t">Stavba pneumatiky</title><desc id="d">Schéma pneumatiky s popisom dezénu, nárazníka, bočnice a ráfika</desc>
+<rect width="640" height="360" rx="20" fill="#0F1B24"/>
+<g transform="translate(180,180)">
+<circle r="150" fill="#1b2a35" stroke="#F2F5F7" stroke-width="3"/>
+<g stroke="#F2F5F7" stroke-width="6" stroke-linecap="round">
+<line x1="0" y1="-150" x2="0" y2="-138"/><line x1="106" y1="-106" x2="98" y2="-98"/><line x1="150" y1="0" x2="138" y2="0"/><line x1="106" y1="106" x2="98" y2="98"/><line x1="0" y1="150" x2="0" y2="138"/><line x1="-106" y1="106" x2="-98" y2="98"/><line x1="-150" y1="0" x2="-138" y2="0"/><line x1="-106" y1="-106" x2="-98" y2="-98"/>
+</g>
+<circle r="132" fill="none" stroke="#FFC20E" stroke-width="3" stroke-dasharray="8 6"/>
+<circle r="88" fill="#0F1B24" stroke="#F2F5F7" stroke-width="3"/>
+<circle r="70" fill="#8a97a1"/>
+<g stroke="#0F1B24" stroke-width="10"><line x1="0" y1="-70" x2="0" y2="70"/><line x1="-70" y1="0" x2="70" y2="0"/><line x1="-50" y1="-50" x2="50" y2="50"/><line x1="50" y1="-50" x2="-50" y2="50"/></g>
+<circle r="18" fill="#FFC20E"/>
+</g>
+<g font-family="Georgia, serif" font-size="17" fill="#F2F5F7" stroke="#FFC20E" stroke-width="2">
+<line x1="286" y1="74" x2="400" y2="50"/><line x1="307" y1="146" x2="400" y2="130"/><line x1="275" y1="235" x2="400" y2="210"/><line x1="210" y1="232" x2="400" y2="290"/>
+<g stroke="none" fill="#FFC20E"><circle cx="286" cy="74" r="5"/><circle cx="307" cy="146" r="5"/><circle cx="275" cy="235" r="5"/><circle cx="210" cy="232" r="5"/></g>
+<g stroke="none"><text x="408" y="55">Dezén (behúň)</text><text x="408" y="135">Nárazník (oceľové pásy)</text><text x="408" y="215">Bočnica</text><text x="408" y="295">Ráfik (disk)</text></g>
+</g>
+</svg>
