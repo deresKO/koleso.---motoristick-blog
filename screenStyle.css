@@ -1,0 +1,636 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*--------Farby ktore sa pouzivaju na stranke, pre jednoduchsiu zmenu farby na stranke------------*/
+:root {
+    --modra: #0F1B24;
+    --biela: #F2F5F7;
+    --zlta: #FFC20E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', Georgia, 'Times New Roman', serif;
+    background-color: #000000;
+    color: var(--biela);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- hlavička ---------- */
+
+.biela {
+    width: 100%;
+    height: 8.125rem;
+    background-color: var(--biela);
+    border-bottom-right-radius: 2.1875rem;
+    border-bottom-left-radius: 2.1875rem;
+}
+
+.vyrez {
+    position: absolute;
+    top: 0;
+    left: 12.5rem;
+    width: 18.75rem;
+    height: 6.25rem;
+    background-color: black;
+    border-bottom-left-radius: 1.875rem;
+    border-bottom-right-radius: 1.875rem;
+    box-shadow: 0.25rem 0.25rem 0.625rem hsla(0, 0%, 23%, 0.4);
+}
+
+/*--------------logo--------------------*/
+.logo {
+    position: absolute;
+    top: 0.625rem;
+    left: 14.375rem;
+}
+
+.logo img {
+    transition: transform 0.6s ease;
+}
+
+@media (hover: hover) and (min-width: 48.0625em) {
+    .logo:hover img {
+        transform: rotate(-4deg) scale(1.05);
+    }
+}
+
+.obal {
+    display: block;
+    padding-top: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.pozadienavigacie {
+    width: 80%;
+    height: 3.125rem;
+    margin: 0 auto;
+    background-color: var(--biela);
+    border-radius: 0.9375rem;
+    position: relative;
+}
+
+.menu-links {
+    display: flex;
+}
+
+/*---------------odseky-clanky---------------------*/
+
+.clanok {
+    position: relative;
+    display: inline-block;
+    font-weight: 300;
+    color: #000;
+    margin-left: 1.5625rem;
+    margin-top: 0.8125rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.clanok::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.125rem;
+    width: 0;
+    height: 0.125rem;
+    background: var(--zlta);
+    transition: width 0.3s ease;
+}
+
+.clanok:hover {
+    color: var(--zlta);
+}
+
+.clanok:hover::after {
+    width: 100%;
+}
+
+/*------------menu pre mobilne zariadenie--------*/
+
+.menu-checkbox {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.75rem;
+    color: #000;
+    cursor: pointer;
+    line-height: 3.125rem;
+    margin-left: 1.25rem;
+    user-select: none;
+}
+
+/* ---------- obsah stranky ---------- */
+main {
+    max-width: 67.5rem;
+    padding: 0 5%;
+    animation: nabeh 0.6s ease both;
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@keyframes nabeh {
+    from {
+        opacity: 0;
+        transform: translateY(0.9375rem);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    color: var(--zlta);
+    margin: 0 0.9375rem 0.9375rem;
+    font-size: 1.875rem;
+}
+
+h2 {
+    text-align: left;
+    font-weight: 400;
+    color: var(--biela);
+    margin: 0.9375rem;
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 0.625rem;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.odsek {
+    text-align: justify;
+    font-weight: 200;
+    color: var(--biela);
+}
+
+.spat, main a {
+    color: var(--zlta);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.spat:hover, main a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+
+ol, ul {
+    font-weight: 200;
+    color: var(--biela);
+    margin-left: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ul {
+    margin-left: 1.25rem;
+    list-style-type: disc;
+}
+
+li {
+    padding: 0.3125rem;
+    margin-left: 1.25rem;
+}
+
+.tip {
+    margin: 1.5625rem 0.9375rem;
+    padding: 0.9375rem 1.25rem;
+    border-left: 0.3125rem solid var(--zlta);
+    background: var(--modra);
+    font-weight: 300;
+    border-radius: 0 0.75rem 0.75rem 0;
+}
+
+/* ---------- tabuľka ---------- */
+.tabulka {
+    background-color: white;
+    padding: 1.5625rem;
+    border-radius: 1.5625rem;
+    box-shadow: 0.25rem 0.25rem 0.625rem hsla(0, 0%, 100%, 0.4);
+    display: block;
+    overflow-x: auto;
+}
+
+table {
+    font-weight: 200;
+    color: var(--biela);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    color: #000;
+    font-weight: 500;
+    padding-bottom: 0.75rem;
+    text-align: left;
+}
+
+th {
+    padding: 0.9375rem;
+    background-color: var(--zlta);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #000;
+}
+
+td {
+    color: #000;
+    padding: 0.9375rem;
+    border: 0.1875rem solid #000;
+}
+
+tfoot td {
+    font-size: 0.875rem;
+    font-style: italic;
+    background: #e8ecef;
+}
+
+tbody tr {
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background: #FFF3C4;
+}
+
+.a {
+    font-size: 1.125rem;
+}
+
+/* ---------- obrázok ---------- */
+figure {
+    margin: 2.5rem 0 1.25rem;
+    text-align: center;
+}
+
+.obrazok1 {
+    width: 100%;
+    height: auto;
+    border-radius: 1.25rem;
+}
+
+figcaption {
+    font-size: 0.875rem;
+    font-weight: 200;
+    margin-top: 0.5rem;
+}
+
+/* ---------- úvodná stránka ---------- */
+.uvod {
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+
+.koleso {
+    margin-bottom: 0.9375rem;
+    transition: transform 1s ease;
+}
+
+.koleso:hover {
+    transform: rotate(360deg);
+}
+
+.zoznam-clankov {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    display: grid;
+    gap: 0.9375rem;
+}
+
+.karta {
+    margin: 0;
+    padding: 1.25rem;
+    background: var(--modra);
+    border-radius: 1.25rem;
+    border: thin solid transparent;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.karta:hover {
+    transform: translateY(-0.375rem);
+    box-shadow: 0 0.625rem 1.5625rem hsla(43, 100%, 53%, 0.25);
+    border-color: var(--zlta);
+}
+
+.karta a {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.3125rem;
+}
+
+.karta span {
+    font-weight: 200;
+}
+
+/* ---------- pätička ---------- */
+footer {
+    background-color: var(--modra);
+    color: var(--biela);
+    padding: 1.25rem 0;
+    margin-top: 3.125rem;
+}
+
+.footer-obsah {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.9375rem;
+    font-size: 0.875rem;
+}
+
+.footer-obsah p {
+    margin: 0;
+}
+
+.footer-odkazy a {
+    color: var(--biela);
+    text-decoration: none;
+    margin-left: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.footer-odkazy a:hover {
+    color: var(--zlta);
+}
+
+
+/* ---------- mobil ---------- */
+@media (max-width: 48em) {
+    .biela {
+        height: 5rem;
+    }
+
+    .vyrez {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5.625rem;
+        height: 4.6875rem;
+        border-bottom-left-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+        box-shadow: 0.25rem 0.25rem 0.625rem rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0.3125rem;
+        width: 4.0625rem;
+        height: 4.0625rem;
+        overflow: hidden;
+        display: block;
+        z-index: 5;
+    }
+
+    .logo img {
+        width: 12.5rem;
+        height: 4.0625rem;
+        object-fit: cover;
+        object-position: left center;
+    }
+
+    .obal {
+        padding: 0;
+        margin: 0 0 1.875rem;
+    }
+
+    .pozadienavigacie {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 4.375rem;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+        font-size: 2rem;
+        margin-right: 1.25rem;
+        line-height: 5rem;
+    }
+
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        background-color: var(--biela);
+        padding-bottom: 0.9375rem;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+        z-index: 10;
+    }
+
+    .clanok {
+        margin-top: 0.9375rem;
+        margin-left: 1.25rem;
+    }
+
+    .menu-checkbox:checked ~ .menu-links {
+        display: flex;
+    }
+
+    .footer-obsah {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-odkazy a {
+        margin: 0 0.625rem;
+    }
+
+    th, td {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .tabulka {
+        padding: 0.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ---------- rozloženie článkov: hlavný text v strede, doplnkový obsah po stranách ---------- */
+.rozlozenie {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+.rozlozenie > article { 
+    order: 1; 
+    min-width: 0; 
+    max-width: 50rem; 
+    margin: 0 auto; 
+}
+
+.rozlozenie > .bocne-lavy { 
+    order: 2; 
+}
+.rozlozenie > .bocne-pravy { 
+    order: 3; 
+}
+
+.hlavicka-clanku {
+    border-bottom: 0.125rem solid var(--zlta);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+}
+
+.rozlozenie section {
+    margin-bottom: 1rem; 
+}
+
+.bocne {
+    background: var(--modra);
+    border-radius: 1.25rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 300;
+    align-self: start;
+}
+
+.bocne h2 { 
+    margin: 0 0 0.5rem; 
+    font-size: 1.1rem; 
+    color: var(--zlta); 
+}
+
+.bocne-zoznam { 
+    list-style: none; 
+    margin: 0; 
+}
+
+.bocne-zoznam li { 
+    margin: 0; 
+    padding: 0.25rem 0; 
+}
+
+.bocne a { 
+    color: var(--biela); 
+    text-decoration: none; 
+    transition: color 0.3s, padding-left 0.3s; 
+}
+
+.bocne a:hover {
+    color: var(--zlta); 
+    padding-left: 0.4rem; 
+}
+
+.bocne .tip { 
+    margin: 0; 
+    border-radius: 0 0.75rem 0.75rem 0; 
+    background: transparent; 
+    padding: 0.25rem 0 0.25rem 0.75rem; 
+}
+
+.spat-nav { 
+    margin: 1.5rem 0 0; 
+}
+
+
+img, svg { 
+    max-width: 100%; 
+}
+.rozlozenie > article { 
+    overflow-wrap: break-word; 
+}
+
+
+@media (min-width: 64em) {
+    .rozlozenie {
+        grid-template-columns: minmax(10rem, 1fr) minmax(0, 46rem) minmax(10rem, 1fr);
+        max-width: 90rem;
+        gap: 2rem;
+        padding: 0 2%;
+    }
+    .rozlozenie > article { 
+        order: 2; 
+        margin: 0; 
+    }
+    .rozlozenie > .bocne-lavy { 
+        order: 1; 
+        position: sticky; 
+        top: 1rem; 
+    }
+    .rozlozenie > .bocne-pravy { 
+        order: 3; 
+        position: sticky; 
+        top: 1rem; 
+    }
+}
+
+/*------------velka obrazovka-----------------*/
+@media (min-width: 100em) {
+    html { font-size: 112.5%; }
+}
+
+/*-------------uzka obrazovka---------------------------------*/
+@media (max-width: 48em) {
+    main { 
+        padding: 0 4%; 
+    }
+    h1 { 
+        font-size: 1.5rem; 
+    }
+    .odsek { 
+        text-align: left; 
+    }
+    .rozlozenie > article { 
+        max-width: 100%; 
+    }
+}
+
+/* ---------- transformácia + animácia: pulzujúce tlačidlo späť ---------- */
+@keyframes pulz {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.06); 
+    }
+}
+.spat-nav .spat {
+    display: inline-block;
+    animation: pulz 2.5s ease-in-out infinite;
+}
+.spat-nav .spat:hover { 
+    animation-play-state: paused; 
+    transform: translateX(-0.3rem) rotate(-2deg); 
+}

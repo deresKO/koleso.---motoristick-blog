@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Motoristický blog o spoľahlivých autách, výbere jazdených vozidiel a údržbe.">
+    <link rel="stylesheet" href="screenStyle.css" media="screen">
+    <link rel="stylesheet" href="public/css/printStyle.css" media="print">
+    <link rel="icon" href="fig/favicon.svg">
+    <title>Motoristický blog | koleso.</title>
+</head>
+<body>
+    <header>
+        <div class="biela"></div>
+        <div class="vyrez"></div>
+        <a href="index.html" class="logo"><img src="fig/logo.svg" alt="logo-koleso-motoristickyblog"></a>
+        <nav>
+            <div class="obal">
+                <div class="pozadienavigacie">
+                    <input type="checkbox" id="menu-check" class="menu-checkbox" aria-label="Otvoriť menu">
+                    <label for="menu-check" class="menu-toggle">☰</label>
+                    <div class="menu-links">
+                        <a href="article1.html" class="clanok">Spoľahlivé autá</a>
+                        <a href="article2.html" class="clanok">Najlepšie autá</a>
+                        <a href="article3.html" class="clanok">Údržba auta</a>
+                        <a href="article4.html" class="clanok">Pohon</a>
+                        <a href="article5.html" class="clanok">Pneumatiky</a>
+                        <a href="kontakty.html" class="clanok">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="uvod">
+            <svg viewBox="0 0 100 100" width="150" height="150" role="img" aria-label="Koleso s logom blogu" class="koleso">
+                <circle cx="50" cy="50" r="45" fill="#0F1B24" stroke="#FFC20E" stroke-width="6"/>
+                <g stroke="#FFC20E" stroke-width="4" stroke-linecap="round">
+                    <line x1="50" y1="12" x2="50" y2="88"/><line x1="12" y1="50" x2="88" y2="50"/>
+                    <line x1="23" y1="23" x2="77" y2="77"/><line x1="77" y1="23" x2="23" y2="77"/>
+                </g>
+                <circle cx="50" cy="50" r="13" fill="#FFC20E"/>
+                <circle cx="50" cy="50" r="5" fill="#0F1B24"/>
+            </svg>
+            <h1>koleso. - motoristický blog</h1>
+            <p class="odsek">Blog o autách pre každého, kto chce jazdiť bez zbytočných starostí. Píšeme o spoľahlivých modeloch, o tom, čo si dať pozor pri kúpe jazdeného vozidla, a o tom, ako sa o auto starať, aby slúžilo čo najdlhšie.</p>
+            <p class="odsek">Autor: <a href="mailto:martin.kamensky@student.tuke.sk" class="spat">Martin Kamenský</a></p>
+        </section>
+
+        <h2>Články</h2>
+        <ul class="zoznam-clankov">
+            <li class="karta"><a href="article1.html">Spoľahlivé autá: Ktoré modely vydržia roky?</a><span>Na čo sa pozrieť pri výbere a ktoré modely stoja za pozornosť.</span></li>
+            <li class="karta"><a href="article2.html">Najlepšie autá podľa kategórií</a><span>Rebríček áut do mesta, pre rodinu aj na dlhé cesty.</span></li>
+            <li class="karta"><a href="article3.html">Údržba auta: ako predĺžiť jeho život</a><span>Jednoduché kroky, ktoré ušetria tisíce eur.</span></li>
+            <li class="karta"><a href="article4.html">Benzín, diesel, hybrid alebo elektro? Aký pohon si vybrať</a><span>Porovnanie typov pohonu a rady, ako sa rozhodnúť.</span></li>
+            <li class="karta"><a href="article5.html">Zimné pneumatiky: kedy ich prezuť a ako ich vybrať</a><span>Teploty, dezén, označenie a skladovanie.</span></li>
+        </ul>
+    </main>
+
+    <footer>
+        <div class="footer-obsah">
+            <p>&copy; 2026 koleso. motoristický blog. Všetky práva vyhradené.</p>
+            <div class="footer-odkazy">
+                <a href="ochranasukromia.html">Ochrana súkromia</a>
+                <a href="kontakty.html">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Porovnanie benzínu, dieselu, hybridu a elektromobilu.">
+    <link rel="stylesheet" href="screenStyle.css" media="screen">
+    <link rel="stylesheet" href="public/css/printStyle.css" media="print">
+    <link rel="icon" href="fig/favicon.svg">
+    <title>Aký pohon si vybrať | koleso.</title>
+</head>
+<body>
+    <header>
+        <div class="biela"></div>
+        <div class="vyrez"></div>
+        <a href="index.html" class="logo"><img src="fig/logo.svg" alt="logo-koleso-motoristickyblog"></a>
+        <nav>
+            <div class="obal">
+                <div class="pozadienavigacie">
+                    <input type="checkbox" id="menu-check" class="menu-checkbox" aria-label="Otvoriť menu">
+                    <label for="menu-check" class="menu-toggle">☰</label>
+                    <div class="menu-links">
+                        <a href="article1.html" class="clanok">Spoľahlivé autá</a>
+                        <a href="article2.html" class="clanok">Najlepšie autá</a>
+                        <a href="article3.html" class="clanok">Údržba auta</a>
+                        <a href="article4.html" class="clanok">Pohon</a>
+                        <a href="article5.html" class="clanok">Pneumatiky</a>
+                        <a href="kontakty.html" class="clanok">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="rozlozenie">
+        <aside class="bocne bocne-lavy">
+            <nav aria-label="Ďalšie články">
+                <h2>Ďalšie články</h2>
+                <ul class="bocne-zoznam">
+                    <li><a href="article1.html">Spoľahlivé autá</a></li>
+                    <li><a href="article2.html">Najlepšie autá</a></li>
+                    <li><a href="article3.html">Údržba auta</a></li>
+                    <li><a href="article4.html">Aký pohon si vybrať</a></li>
+                    <li><a href="article5.html">Zimné pneumatiky</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+            <header class="hlavicka-clanku">
+                <h1>Benzín, diesel, hybrid alebo elektro? Aký pohon si vybrať</h1>
+            </header>
+            <p class="odsek">Pri kúpe auta dnes nestačí vybrať značku a farbu. Veľkou otázkou je aj pohon. Každý typ má svoje výhody a nevýhody a to najlepšie riešenie závisí od toho, koľko jazdíš a kde.</p>
+            <section>
+                <h2>Benzín a diesel</h2>
+                <p class="odsek">Benzínové motory sú jednoduchšie a lacnejšie na údržbu, preto sa hodia do mesta a na menšie nájazdy. Diesel sa oplatí pri veľkých ročných kilometroch, najmä na diaľniciach, kde má nízku spotrebu. Pri krátkych trasách sa však môže upchávať filter pevných častíc.</p>
+            </section>
+            <section>
+                <h2>Hybrid a elektromobil</h2>
+                <p class="odsek">Hybrid spája spaľovací motor s elektrickým a v meste ušetrí množstvo paliva. Elektromobil má najnižšie náklady na energiu a veľmi tichý chod, no vyžaduje možnosť nabíjania doma alebo v práci a pri dlhých cestách je potrebné plánovať zastávky.</p>
+            </section>
+            <section>
+                <h2>Porovnanie pohonov</h2>
+                <div class="tabulka">
+                    <table>
+                        <caption>Orientačné porovnanie typov pohonu</caption>
+                        <thead>
+                            <tr><th scope="col">Pohon</th><th scope="col">Výhoda</th><th scope="col">Nevýhoda</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="a"><strong>Benzín</strong></td><td>Nižšia cena a jednoduchá údržba</td><td>Vyššia spotreba na diaľnici</td></tr>
+                            <tr><td class="a"><strong>Diesel</strong></td><td>Nízka spotreba na dlhých trasách</td><td>Citlivý na krátke jazdy</td></tr>
+                            <tr><td class="a"><strong>Hybrid</strong></td><td>Úsporný v meste</td><td>Vyššia cena auta</td></tr>
+                            <tr><td class="a"><strong>Elektro</strong></td><td>Lacná a tichá prevádzka</td><td>Nabíjanie a dojazd</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td colspan="3">Údaje sú orientačné a líšia sa podľa konkrétneho modelu.</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <h2>Ako sa rozhodnúť?</h2>
+                <ol>
+                    <li>Spočítaj, koľko kilometrov ročne najazdíš.</li>
+                    <li>Zisti, či máš kde auto nabíjať alebo parkovať.</li>
+                    <li>Porovnaj celkové náklady, nielen kúpnu cenu.</li>
+                    <li>Vyskúšaj si auto na vlastnej trase.</li>
+                </ol>
+            </section>
+            <nav class="spat-nav" aria-label="Navigácia späť"><a href="index.html" class="spat">&larr; Späť na hlavnú stránku</a></nav>
+        </article>
+        <aside class="bocne bocne-pravy">
+            <p class="tip"><strong>Tip:</strong> Pri porovnaní áut sleduj celkové náklady na 5 rokov, nielen cenu pri kúpe.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-obsah">
+            <p>&copy; 2026 koleso. motoristický blog. Všetky práva vyhradené.</p>
+            <div class="footer-odkazy">
+                <a href="ochranasukromia.html">Ochrana súkromia</a>
+                <a href="kontakty.html">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
