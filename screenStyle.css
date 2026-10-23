@@ -378,6 +378,23 @@ footer {
     color: var(--zlta);
 }
 
+.footer-validatory {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.footer-validatory a {
+    display: block;
+    line-height: 0;
+}
+
+.footer-validatory img {
+    display: block;
+    height: 1.94rem;
+    width: auto;
+}
+
 
 /* ---------- mobil ---------- */
 @media (max-width: 64em) {
