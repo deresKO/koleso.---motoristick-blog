@@ -380,7 +380,7 @@ footer {
 
 
 /* ---------- mobil ---------- */
-@media (max-width: 48em) {
+@media (max-width: 64em) {
     .biela {
         height: 5rem;
     }
@@ -459,6 +459,9 @@ footer {
         display: flex;
     }
 
+}
+
+@media (max-width: 48em) {
     .footer-obsah {
         flex-direction: column;
         text-align: center;
@@ -493,19 +496,9 @@ footer {
     max-width: 100%;
 }
 
-.rozlozenie > article { 
-    order: 1; 
-    min-width: 0; 
-    max-width: 50rem; 
-    margin: 0 auto; 
-}
-
-.rozlozenie > .bocne-lavy { 
-    order: 2; 
-}
-.rozlozenie > .bocne-pravy { 
-    order: 3; 
-}
+.rozlozenie > article { order: 1; min-width: 0; max-width: 50rem; margin: 0 auto; }
+.rozlozenie > .bocne-lavy { order: 2; }
+.rozlozenie > .bocne-pravy { order: 3; }
 
 .hlavicka-clanku {
     border-bottom: 0.125rem solid var(--zlta);
@@ -513,9 +506,7 @@ footer {
     padding-bottom: 0.5rem;
 }
 
-.rozlozenie section {
-    margin-bottom: 1rem; 
-}
+.rozlozenie section { margin-bottom: 1rem; }
 
 .bocne {
     background: var(--modra);
@@ -526,53 +517,20 @@ footer {
     align-self: start;
 }
 
-.bocne h2 { 
-    margin: 0 0 0.5rem; 
-    font-size: 1.1rem; 
-    color: var(--zlta); 
-}
+.bocne h2 { margin: 0 0 0.5rem; font-size: 1.1rem; color: var(--zlta); }
+.bocne-zoznam { list-style: none; margin: 0; }
+.bocne-zoznam li { margin: 0; padding: 0.25rem 0; }
+.bocne a { color: var(--biela); text-decoration: none; transition: color 0.3s, padding-left 0.3s; }
+.bocne a:hover { color: var(--zlta); padding-left: 0.4rem; }
+.bocne .tip { margin: 0; border-radius: 0 0.75rem 0.75rem 0; background: transparent; padding: 0.25rem 0 0.25rem 0.75rem; }
 
-.bocne-zoznam { 
-    list-style: none; 
-    margin: 0; 
-}
+.spat-nav { margin: 1.5rem 0 0; }
 
-.bocne-zoznam li { 
-    margin: 0; 
-    padding: 0.25rem 0; 
-}
+/* tablet: obrázok a tabuľka nikdy nepretečú, text sa neťahá po celej šírke */
+img, svg { max-width: 100%; }
+.rozlozenie > article { overflow-wrap: break-word; }
 
-.bocne a { 
-    color: var(--biela); 
-    text-decoration: none; 
-    transition: color 0.3s, padding-left 0.3s; 
-}
-
-.bocne a:hover {
-    color: var(--zlta); 
-    padding-left: 0.4rem; 
-}
-
-.bocne .tip { 
-    margin: 0; 
-    border-radius: 0 0.75rem 0.75rem 0; 
-    background: transparent; 
-    padding: 0.25rem 0 0.25rem 0.75rem; 
-}
-
-.spat-nav { 
-    margin: 1.5rem 0 0; 
-}
-
-
-img, svg { 
-    max-width: 100%; 
-}
-.rozlozenie > article { 
-    overflow-wrap: break-word; 
-}
-
-
+/* široké obrazovky: tri stĺpce, text je v strede a okraje využíva doplnkový obsah */
 @media (min-width: 64em) {
     .rozlozenie {
         grid-template-columns: minmax(10rem, 1fr) minmax(0, 46rem) minmax(10rem, 1fr);
@@ -580,57 +538,51 @@ img, svg {
         gap: 2rem;
         padding: 0 2%;
     }
-    .rozlozenie > article { 
-        order: 2; 
-        margin: 0; 
-    }
-    .rozlozenie > .bocne-lavy { 
-        order: 1; 
-        position: sticky; 
-        top: 1rem; 
-    }
-    .rozlozenie > .bocne-pravy { 
-        order: 3; 
-        position: sticky; 
-        top: 1rem; 
-    }
+    .rozlozenie > article { order: 2; margin: 0; }
+    .rozlozenie > .bocne-lavy { order: 1; position: sticky; top: 1rem; }
+    .rozlozenie > .bocne-pravy { order: 3; position: sticky; top: 1rem; }
 }
 
-/*------------velka obrazovka-----------------*/
+/* veľmi veľké obrazovky: väčšie písmo */
 @media (min-width: 100em) {
     html { font-size: 112.5%; }
 }
 
-/*-------------uzka obrazovka---------------------------------*/
+/* úzke obrazovky: obsah na celú šírku, žiadne vodorovné skrolovanie */
 @media (max-width: 48em) {
-    main { 
-        padding: 0 4%; 
-    }
-    h1 { 
-        font-size: 1.5rem; 
-    }
-    .odsek { 
-        text-align: left; 
-    }
-    .rozlozenie > article { 
-        max-width: 100%; 
-    }
+    main { padding: 0 4%; }
+    h1 { font-size: 1.5rem; }
+    .odsek { text-align: left; }
+    .rozlozenie > article { max-width: 100%; }
 }
 
 /* ---------- transformácia + animácia: pulzujúce tlačidlo späť ---------- */
 @keyframes pulz {
-    0%, 100% { 
-        transform: scale(1); 
-    }
-    50% { 
-        transform: scale(1.06); 
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
 }
 .spat-nav .spat {
     display: inline-block;
     animation: pulz 2.5s ease-in-out infinite;
 }
-.spat-nav .spat:hover { 
-    animation-play-state: paused; 
-    transform: translateX(-0.3rem) rotate(-2deg); 
+.spat-nav .spat:hover { animation-play-state: paused; transform: translateX(-0.3rem) rotate(-2deg); }
+
+/* ---------- navigácia: text sa nelámu a rozmery sa prispôsobia šírke ---------- */
+.clanok {
+    white-space: nowrap;
+    font-size: clamp(0.85rem, 1.15vw, 1rem);
+    margin-left: clamp(0.6rem, 1.6vw, 1.5625rem);
 }
+.pozadienavigacie { width: 92%; max-width: 80rem; }
+@media (max-width: 64em) {
+    .pozadienavigacie { width: 100%; max-width: none; }
+    .clanok { font-size: 1rem; margin-left: 1.25rem; }
+}
+
+/* ---------- vložený Spotify prehrávač ---------- */
+.spotify {
+    width: 100%;
+    max-width: 40rem;
+    margin: 1rem auto 1.5rem;
+}
+.spotify iframe { display: block; width: 100%; min-height: 22rem; border: 0; }
