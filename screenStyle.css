@@ -589,10 +589,13 @@ img, svg { max-width: 100%; }
 
 /* ---------- rozbaľovacia ponuka "Články" (nové články pridávaš len do zoznamu v nej) ---------- */
 .rozbal { position: relative; }
-.rozbal summary { list-style: none; cursor: pointer; }
-.rozbal summary::-webkit-details-marker { display: none; }
+.rozbal { flex: 0 0 auto; }
+.rozbal-tl { cursor: pointer; user-select: none; }
+.rozbal-checkbox { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.rozbal-checkbox:focus-visible + .rozbal-tl { outline: 0.125rem solid var(--zlta); outline-offset: 0.25rem; }
 .rozbal .sip { display: inline-block; transition: transform 0.3s ease; }
-.rozbal[open] .sip { transform: rotate(180deg); }
+.rozbal-checkbox:checked + .rozbal-tl .sip { transform: rotate(180deg); }
+.rozbal-checkbox:checked + .rozbal-tl { color: var(--zlta); }
 .rozbal-obsah {
     position: absolute;
     top: 100%;
@@ -601,7 +604,7 @@ img, svg { max-width: 100%; }
     min-width: 15rem;
     max-height: 70vh;
     overflow-y: auto;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 0.5rem 0;
     background: var(--biela);
@@ -616,3 +619,6 @@ img, svg { max-width: 100%; }
     .rozbal-obsah { position: static; box-shadow: none; min-width: 0; padding: 0 0 0 1rem; max-height: none; background: transparent; }
     .rozbal-obsah .clanok { margin: 0.6rem 1.25rem; }
 }
+
+.rozbal-checkbox:checked ~ .rozbal-obsah { display: flex; }
+.menu-links { justify-content: flex-start; align-items: flex-start; }
