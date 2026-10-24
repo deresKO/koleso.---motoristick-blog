@@ -639,3 +639,161 @@ img, svg { max-width: 100%; }
 
 .rozbal-checkbox:checked ~ .rozbal-obsah { display: flex; }
 .menu-links { justify-content: flex-start; align-items: flex-start; }
+
+
+/* ---------- formulár a názory ---------- */
+.nazory-sekcia {
+    margin-top: 2.5rem;
+}
+
+.formular {
+    background: var(--modra);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    margin: 0 0 1.875rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--biela);
+}
+
+.formular label,
+.formular legend {
+    font-weight: 200;
+    margin-top: 0.5rem;
+}
+
+.formular input[type="text"],
+.formular input[type="email"],
+.formular input[type="url"],
+.formular textarea {
+    font: inherit;
+    padding: 0.625rem 0.75rem;
+    color: var(--modra);
+    background: var(--biela);
+    border: 0.125rem solid transparent;
+    border-radius: 0.625rem;
+    width: 100%;
+}
+
+.formular textarea {
+    resize: vertical;
+}
+
+.formular fieldset {
+    border: thin solid var(--zlta);
+    border-radius: 0.625rem;
+    padding: 0.5rem 0.75rem 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+}
+
+.formular fieldset label,
+.formular .riadok {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.formular input[type="radio"],
+.formular input[type="checkbox"] {
+    accent-color: var(--zlta);
+}
+
+/* povinné / nepovinné */
+.formular :required {
+    border-left: 0.3125rem solid var(--zlta);
+}
+
+.formular :optional:not([type="radio"]):not([type="checkbox"]) {
+    border-left: 0.3125rem solid #6b7a85;
+}
+
+/* validné / nevalidné (až po zásahu používateľa) */
+.formular input:user-valid,
+.formular textarea:user-valid {
+    border-color: #3fb950;
+}
+
+.formular input:user-invalid,
+.formular textarea:user-invalid {
+    border-color: #f85149;
+    background: #fdecec;
+}
+
+.formular :focus-visible {
+    outline: 0.1875rem solid var(--zlta);
+    outline-offset: 0.125rem;
+}
+
+.tlacidla {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.tlacidla button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.625rem;
+    border: thin solid var(--zlta);
+    background: var(--zlta);
+    color: var(--modra);
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.tlacidla button[type="reset"] {
+    background: transparent;
+    color: var(--zlta);
+}
+
+.tlacidla button:hover {
+    opacity: 0.8;
+}
+
+.nazory {
+    display: grid;
+    gap: 0.9375rem;
+}
+
+.nazor {
+    background: var(--modra);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    color: var(--biela);
+    overflow-wrap: anywhere;
+}
+
+.nazor h3 {
+    color: var(--zlta);
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.nazor h3 i {
+    color: var(--biela);
+    font-weight: 200;
+    font-size: 0.875rem;
+}
+
+.nazor img {
+    display: block;
+    max-width: 100%;
+    max-height: 15rem;
+    border-radius: 0.625rem;
+    margin-bottom: 0.625rem;
+}
+
+.nazor p {
+    font-weight: 200;
+}
+
+.nazor .meta {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+}

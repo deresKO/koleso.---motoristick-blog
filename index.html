@@ -64,6 +64,54 @@
             <li class="karta"><a href="article5.html">Zimné pneumatiky: kedy ich prezuť a ako ich vybrať</a><span>Teploty, dezén, označenie a skladovanie.</span></li>
     <li class="karta"><a href="article6.html">Hudba do auta: čo si pustiť na dlhú cestu</a><span>Odporúčaný album na počúvanie počas jazdy.</span></li>
         </ul>
+
+        <section class="nazory-sekcia" id="nazory">
+            <h2>Váš názor</h2>
+            <form id="opnFrm" class="formular">
+                <label for="nameElm">Meno</label>
+                <input type="text" id="nameElm" name="meno" maxlength="50" placeholder="Ako sa voláš?" required>
+
+                <label for="emailElm">E-mail</label>
+                <input type="email" id="emailElm" name="email" placeholder="meno@example.com" required>
+
+                <label for="urlElm">Fotka tvojho auta (URL, nepovinné)</label>
+                <input type="url" id="urlElm" name="obrazok" placeholder="https://...">
+
+                <label for="keywordsElm">Kľúčové slovo, ktoré sa hodí na blog</label>
+                <input type="text" id="keywordsElm" name="kluc" list="kluc-slova" placeholder="napr. hybrid">
+                <datalist id="kluc-slova">
+                    <option value="spoľahlivosť">
+                    <option value="údržba">
+                    <option value="zimné pneumatiky">
+                    <option value="jazdené autá">
+                    <option value="hybrid">
+                    <option value="elektromobil">
+                    <option value="spotreba">
+                    <option value="hudba v aute">
+                </datalist>
+
+                <fieldset>
+                    <legend>Aký pohon jazdíš?</legend>
+                    <label><input type="radio" name="pohon" value="benzín" checked> Benzín</label>
+                    <label><input type="radio" name="pohon" value="diesel"> Diesel</label>
+                    <label><input type="radio" name="pohon" value="hybrid"> Hybrid</label>
+                    <label><input type="radio" name="pohon" value="elektro"> Elektro</label>
+                </fieldset>
+
+                <label for="opnElm">Tvoj názor</label>
+                <textarea id="opnElm" name="komentar" rows="4" placeholder="Čo si myslíš o blogu?" required></textarea>
+
+                <label class="riadok"><input type="checkbox" id="willReturnElm" name="vratim"> Určite sa na blog ešte vrátim</label>
+
+                <div class="tlacidla">
+                    <button type="submit">Odoslať</button>
+                    <button type="reset">Vymazať</button>
+                </div>
+            </form>
+
+            <h2>Názory návštevníkov</h2>
+            <div id="opinionsContainer" class="nazory"></div>
+        </section>
     </main>
 
     <footer>
@@ -85,5 +133,16 @@
             </div>
         </div>
     </footer>
+
+    <script id="mTmplOneOpinion" type="text/template">
+        <section class="nazor">
+            <h3>{{name}} <i>{{createdDate}}</i></h3>
+            {{#image}}<img src="{{image}}" alt="Auto od {{name}}" loading="lazy">{{/image}}
+            <p>{{comment}}</p>
+            <p class="meta">Pohon: {{drive}}{{#keyword}} · Kľúčové slovo: {{keyword}}{{/keyword}}</p>
+            <p class="meta">{{willReturnMessage}}</p>
+        </section>
+    </script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
