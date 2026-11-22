@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Motoristický blog o spoľahlivých autách, výbere jazdených vozidiel a údržbe.">
-    <link rel="stylesheet" href="screenStyle.css" media="screen">
+    <link rel="stylesheet" href="screenStyle.css?v=7" media="screen">
     <link rel="stylesheet" href="public/css/printStyle.css" media="print">
     <link rel="icon" type="image/svg+xml" href="fig/favicon.svg">
     <title>Motoristický blog | koleso.</title>
@@ -13,7 +13,7 @@
     <header>
         <div class="biela"></div>
         <div class="vyrez"></div>
-        <a href="index.html" class="logo"><img src="fig/logo.svg" alt="logo-koleso-motoristickyblog"></a>
+        <a href="#welcome" class="logo"><img src="fig/logo.svg" alt="logo-koleso-motoristickyblog"></a>
         <nav>
             <div class="obal">
                 <div class="pozadienavigacie">
@@ -24,22 +24,49 @@
                             <input type="checkbox" id="rozbal-check" class="rozbal-checkbox" aria-label="Rozbaliť zoznam článkov">
                             <label for="rozbal-check" class="clanok rozbal-tl">Články <span class="sip">&#9662;</span></label>
                             <div class="rozbal-obsah">
-                                <a href="article1.html" class="clanok">Spoľahlivé autá</a>
-                                <a href="article2.html" class="clanok">Najlepšie autá</a>
-                                <a href="article3.html" class="clanok">Údržba auta</a>
-                                <a href="article4.html" class="clanok">Aký pohon si vybrať</a>
-                                <a href="article5.html" class="clanok">Zimné pneumatiky</a>
-                                <a href="article6.html" class="clanok">Hudba do auta</a>
+                                <a href="#article/1" class="clanok">Spoľahlivé autá</a>
+                                <a href="#article/2" class="clanok">Najlepšie autá</a>
+                                <a href="#article/3" class="clanok">Údržba auta</a>
+                                <a href="#article/4" class="clanok">Aký pohon si vybrať</a>
+                                <a href="#article/5" class="clanok">Zimné pneumatiky</a>
+                                <a href="#article/6" class="clanok">Hudba do auta</a>
+                                <a href="#article/7" class="clanok">5 športových áut</a>
+                                <a href="#articles/1" class="clanok">Články zo servera</a>
                             </div>
                         </div>
-                        <a href="kontakty.html" class="clanok">Kontakt</a>
+                        <a href="#opinions" class="clanok">Názory</a>
+                        <a href="#addOpinion" class="clanok">Pridať názor</a>
+                        <a href="#kontakt" class="clanok">Kontakt</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main id="router-view"></main>
+
+    <footer>
+        <div class="footer-obsah">
+            <p>&copy; 2026 koleso. motoristický blog. Všetky práva vyhradené.</p>
+
+            <div class="footer-odkazy">
+                <a href="#ochrana">Ochrana súkromia</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+
+            <div class="footer-validatory">
+                <a href="https://validator.w3.org/check?uri=https://deresko.github.io/koleso.---motoristick-blog/" target="_blank" rel="noopener">
+                    <img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML" width="88" height="31">
+                </a>
+                <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://deresko.github.io/koleso.---motoristick-blog/screenStyle.css" target="_blank" rel="noopener">
+                    <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS" width="88" height="31">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Šablóny pre dynamicky vkladané HTML ===== -->
+    <script id="template-welcome" type="text/template">
         <section class="uvod">
             <svg viewBox="0 0 100 100" width="150" height="150" role="img" aria-label="Koleso s logom blogu" class="koleso">
                 <circle cx="50" cy="50" r="45" fill="#0F1B24" stroke="#FFC20E" stroke-width="6"/>
@@ -54,20 +81,596 @@
             <p class="odsek">Blog o autách pre každého, kto chce jazdiť bez zbytočných starostí. Píšeme o spoľahlivých modeloch, o tom, čo si dať pozor pri kúpe jazdeného vozidla, a o tom, ako sa o auto starať, aby slúžilo čo najdlhšie.</p>
             <p class="odsek">Autor: <a href="mailto:martin.kamensky@student.tuke.sk" class="spat">Martin Kamenský</a></p>
         </section>
-
         <h2>Články</h2>
         <ul class="zoznam-clankov">
-            <li class="karta"><a href="article1.html">Spoľahlivé autá: Ktoré modely vydržia roky?</a><span>Na čo sa pozrieť pri výbere a ktoré modely stoja za pozornosť.</span></li>
-            <li class="karta"><a href="article2.html">Najlepšie autá podľa kategórií</a><span>Rebríček áut do mesta, pre rodinu aj na dlhé cesty.</span></li>
-            <li class="karta"><a href="article3.html">Údržba auta: ako predĺžiť jeho život</a><span>Jednoduché kroky, ktoré ušetria tisíce eur.</span></li>
-            <li class="karta"><a href="article4.html">Benzín, diesel, hybrid alebo elektro? Aký pohon si vybrať</a><span>Porovnanie typov pohonu a rady, ako sa rozhodnúť.</span></li>
-            <li class="karta"><a href="article5.html">Zimné pneumatiky: kedy ich prezuť a ako ich vybrať</a><span>Teploty, dezén, označenie a skladovanie.</span></li>
-    <li class="karta"><a href="article6.html">Hudba do auta: čo si pustiť na dlhú cestu</a><span>Odporúčaný album na počúvanie počas jazdy.</span></li>
+            <li class="karta"><a href="#article/1">Spoľahlivé autá: Ktoré modely vydržia roky?</a><span>Na čo sa pozrieť pri výbere a ktoré modely stoja za pozornosť.</span></li>
+            <li class="karta"><a href="#article/2">Najlepšie autá podľa kategórií</a><span>Rebríček áut do mesta, pre rodinu aj na dlhé cesty.</span></li>
+            <li class="karta"><a href="#article/3">Údržba auta: ako predĺžiť jeho život</a><span>Jednoduché kroky, ktoré ušetria tisíce eur.</span></li>
+            <li class="karta"><a href="#article/4">Benzín, diesel, hybrid alebo elektro? Aký pohon si vybrať</a><span>Porovnanie typov pohonu a rady, ako sa rozhodnúť.</span></li>
+            <li class="karta"><a href="#article/5">Zimné pneumatiky: kedy ich prezuť a ako ich vybrať</a><span>Teploty, dezén, označenie a skladovanie.</span></li>
+    <li class="karta"><a href="#article/6">Hudba do auta: čo si pustiť na dlhú cestu</a><span>Odporúčaný album na počúvanie počas jazdy.</span></li>
+            <li class="karta"><a href="#article/7">5 športových áut: počúvaj, ako znejú</a><span>Päť superaut s tlačidlom, ktoré naštartuje motor.</span></li>
         </ul>
 
-        <section class="nazory-sekcia" id="nazory">
-            <h2>Váš názor</h2>
-            <form id="opnFrm" class="formular">
+        <section class="uvod-nazory">
+            <h2>Názory návštevníkov</h2>
+            <div id="welcome-opinions"></div>
+            <p class="odsek"><a href="#addOpinion">Pridaj aj ty svoj názor &rarr;</a></p>
+        </section>
+    </script>
+
+<script id="template-article-1" type="text/template">
+        <aside class="bocne bocne-lavy">
+            <nav aria-label="Ďalšie články">
+                <h2>Ďalšie články</h2>
+                <ul class="bocne-zoznam">
+                    <li><a href="#article/1">Spoľahlivé autá</a></li>
+                    <li><a href="#article/2">Najlepšie autá</a></li>
+                    <li><a href="#article/3">Údržba auta</a></li>
+                    <li><a href="#article/4">Aký pohon si vybrať</a></li>
+                    <li><a href="#article/5">Zimné pneumatiky</a></li>
+                    <li><a href="#article/6">Hudba do auta</a></li>
+                    <li><a href="#article/7">5 športových áut</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+        <header class="hlavicka-clanku">
+            <h1>Spoľahlivé autá: Ktoré modely vydržia roky?</h1>
+        </header>
+        <p class="odsek">Pri kúpe auta je pre mnohých vodičov najdôležitejším faktorom jeho spoľahlivosť. Nikto nechce tráviť veľa času v servise a míňať stovky eur na neustále opravy. Niektoré autá dokážu pri správnej údržbe najazdiť stovky tisíc kilometrov bez vážnych problémov. Ako si však vybrať vozidlo, ktoré vydrží čo najdlhšie?</p>
+
+        <section>
+            <h2>Čo robí auto spoľahlivým?</h2>
+            <p class="odsek">Spoľahlivosť automobilu závisí od viacerých faktorov. Dôležitú úlohu zohráva konštrukcia motora, kvalita použitých materiálov, pravidelný servis a spôsob jazdy. Ani najspoľahlivejšie auto sa nezaobíde bez výmeny oleja, filtrov a ďalších opotrebiteľných súčiastok.<br>
+                Pri výbere jazdeného vozidla by sme sa nemali pozerať iba na značku alebo rok výroby. Rovnako dôležitý je technický stav konkrétneho auta a jeho servisná história.</p>
+    
+        </section>
+        <section>
+            <h2>5 modelov, ktoré stoja za pozornosť</h2>
+            <p class="odsek">Medzi modely, ktoré sa často spomínajú pri výbere spoľahlivého jazdeného auta, patria:</p>
+            <ol>
+                <li><strong>Toyota Corolla</strong> - praktické vozidlo známe svojou jednoduchosťou a dostupnosťou náhradných dielov.</li>
+                <li><strong>Honda Civic</strong> - ponúka dobré jazdné vlastnosti a pri správnej údržbe môže slúžiť mnoho rokov.</li>
+                <li><strong>Lexus IS</strong> - prémiový sedan, ktorý kombinuje komfort s dôrazom na kvalitu spracovania.</li>
+                <li><strong>Škoda Octavia</strong> - obľúbené auto s priestranným interiérom a širokou ponukou motorov.</li>
+                <li><strong>Mazda 3</strong> - kompaktné vozidlo, ktoré ponúka príjemné jazdné vlastnosti a úsporné motorizácie.</li>
+            </ol>
+            <p class="odsek">Treba však pamätať na to, že spoľahlivosť sa líši podľa konkrétneho motora, generácie, nájazdu kilometrov a starostlivosti predchádzajúceho majiteľa.</p>
+    
+        </section>
+        <section>
+            <h2>Porovnanie vybraných modelov</h2>
+            <div class="tabulka">
+                <table>
+                    <caption>Porovnanie piatich spoľahlivých modelov</caption>
+                    <thead>
+                        <tr><th scope="col">Model</th><th scope="col">Hlavná výhoda</th><th scope="col">Vhodné použitie</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="a"><strong>Toyota Corolla</strong></td><td>Praktickosť a úspornosť</td><td rowspan="2">Mesto a každodenné jazdenie</td></tr>
+                        <tr><td class="a"><strong>Honda Civic</strong></td><td>Dobré jazdné vlastnosti</td></tr>
+                        <tr><td class="a"><strong>Lexus IS</strong></td><td>Komfort a spracovanie</td><td>Dlhšie cesty</td></tr>
+                        <tr><td class="a"><strong>Škoda Octavia</strong></td><td>Veľký batožinový priestor</td><td>Rodina a cestovanie</td></tr>
+                        <tr><td class="a"><strong>Mazda 3</strong></td><td>Jazdné vlastnosti</td><td>Mesto aj okresné cesty</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td colspan="3">Údaje sú orientačné a líšia sa podľa generácie a motorizácie.</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+    
+        </section>
+        <section>
+            <h2>Na čo si dať pozor pri kúpe jazdeného auta?</h2>
+            <p class="odsek">Pred kúpou vozidla je vhodné skontrolovať niekoľko základných vecí:</p>
+            <ul>
+                <li><strong>Servisná história:</strong> over si, či bol olej a filtre menené v odporúčaných intervaloch.</li>
+                <li><strong>Motor:</strong> všímaj si nezvyčajné zvuky, dymenie a prípadné úniky oleja.</li>
+                <li><strong>Karoséria:</strong> skontroluj koróziu, poškodenia a známky po opravách po nehode.</li>
+                <li><strong>Podvozok:</strong> počas skúšobnej jazdy sleduj klepanie a neobvyklé vibrácie.</li>
+                <li><strong>Dokumentácia:</strong> porovnaj stav kilometrov so servisnými záznamami.</li>
+            </ul>
+    
+            <!-- tento typ zmensovania mam ale ide to aj bez neho -->
+    
+            <figure>
+                <img src="fig/obrazokauta-800.jpg"
+                     srcset="fig/obrazokauta-400.jpg 400w, fig/obrazokauta-800.jpg 800w, fig/obrazokauta-1200.jpg 1200w"
+                     sizes="(max-width: 600px) 100vw, 800px"
+                     alt="Rad spoľahlivých jazdených áut" class="obrazok1" width="800" height="450" loading="lazy">
+                <figcaption>Spoľahlivé autá vydržia pri správnej starostlivosti aj stovky tisíc kilometrov.</figcaption>
+            </figure>
+    
+        </section>
+        <section>
+            <h2>Oplatí sa investovať do spoľahlivého auta?</h2>
+            <p class="odsek">Kvalitné auto nemusí byť automaticky drahé. Niekedy môže byť starší model s overeným motorom rozumnejšou voľbou ako novšie vozidlo s komplikovanou technikou. Dôležité je vybrať si auto podľa svojich potrieb a finančných možností.<br>
+                Pri kúpe jazdeného vozidla sa oplatí investovať aj do kontroly v nezávislom servise. Niekoľko desiatok eur za odbornú prehliadku môže pomôcť odhaliť problémy, ktorých oprava by neskôr stála stovky až tisíce eur.</p>
+            <p class="odsek">Spoľahlivé auto je výsledkom dobrej konštrukcie, kvalitného servisu a zodpovedného prístupu majiteľa. Pri výbere by sme sa nemali riadiť iba reklamou alebo skúsenosťami známych, ale aj technickým stavom vozidla. Správne vybrané auto nám môže slúžiť dlhé roky a ušetriť množstvo peňazí aj starostí.</p>
+        </section>
+        <nav class="spat-nav" aria-label="Navigácia späť"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></nav>
+        </article>
+        <aside class="bocne bocne-pravy">
+            <div class="tip"><strong>Tip:</strong> Pred podpisom kúpnej zmluvy si vždy over históriu vozidla a absolvuj skúšobnú jazdu.</div>
+        </aside>
+    
+</script>
+<script id="template-article-2" type="text/template">
+        <aside class="bocne bocne-lavy">
+            <nav aria-label="Ďalšie články">
+                <h2>Ďalšie články</h2>
+                <ul class="bocne-zoznam">
+                    <li><a href="#article/1">Spoľahlivé autá</a></li>
+                    <li><a href="#article/2">Najlepšie autá</a></li>
+                    <li><a href="#article/3">Údržba auta</a></li>
+                    <li><a href="#article/4">Aký pohon si vybrať</a></li>
+                    <li><a href="#article/5">Zimné pneumatiky</a></li>
+                    <li><a href="#article/6">Hudba do auta</a></li>
+                    <li><a href="#article/7">5 športových áut</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+        <header class="hlavicka-clanku">
+            <h1>Najlepšie autá podľa kategórií</h1>
+        </header>
+        <p class="odsek">Neexistuje jedno najlepšie auto pre všetkých. Všetko závisí od toho, na čo ho potrebuješ. Pozreli sme sa preto na tri najčastejšie situácie a vybrali sme modely, ktoré v nich vynikajú.</p>
+        <h2>Do mesta</h2>
+        <p class="odsek">V meste sa cení malý rozmer, nízka spotreba a ľahké parkovanie. Dobrou voľbou sú kompaktné benzínové alebo hybridné autá, ktoré sú lacné na prevádzku aj servis.</p>
+        <h2>Pre rodinu</h2>
+        <p class="odsek">Rodina potrebuje najmä priestor a bezpečnosť. Kombi alebo SUV s veľkým kufrom a dobrou výbavou ochranných systémov zvládne víkendové výlety aj každodenné cestovanie do školy.</p>
+        <h2>Na dlhé cesty</h2>
+        <p class="odsek">Pri dlhých trasách rozhoduje komfort, tichá kabína a nízka spotreba na diaľnici. Veľkú rolu zohráva aj pohodlné sedenie a kvalitný tempomat.</p>
+        <nav class="spat-nav" aria-label="Navigácia späť"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></nav>
+        </article>
+        <aside class="bocne bocne-pravy">
+            <p class="tip"><strong>Tip:</strong> Prečítaj si aj ostatné články blogu.</p>
+        </aside>
+    
+</script>
+<script id="template-article-3" type="text/template">
+        <aside class="bocne bocne-lavy">
+            <nav aria-label="Ďalšie články">
+                <h2>Ďalšie články</h2>
+                <ul class="bocne-zoznam">
+                    <li><a href="#article/1">Spoľahlivé autá</a></li>
+                    <li><a href="#article/2">Najlepšie autá</a></li>
+                    <li><a href="#article/3">Údržba auta</a></li>
+                    <li><a href="#article/4">Aký pohon si vybrať</a></li>
+                    <li><a href="#article/5">Zimné pneumatiky</a></li>
+                    <li><a href="#article/6">Hudba do auta</a></li>
+                    <li><a href="#article/7">5 športových áut</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+        <header class="hlavicka-clanku">
+            <h1>Údržba auta: ako predĺžiť jeho život</h1>
+        </header>
+        <p class="odsek">Pravidelná starostlivosť je najlacnejší spôsob, ako sa vyhnúť veľkým opravám. Nemusíš byť mechanik, často stačí dodržiavať niekoľko jednoduchých pravidiel.</p>
+        <h2>Základné pravidlá</h2>
+        <ul>
+            <li>Meň olej a filtre podľa odporúčaní výrobcu.</li>
+            <li>Pravidelne kontroluj tlak v pneumatikách.</li>
+            <li>Sleduj hladinu chladiacej a brzdovej kvapaliny.</li>
+            <li>Nezanedbávaj kontrolky na palubnej doske.</li>
+        </ul>
+        <p class="odsek">Ak ich budeš dodržiavať, auto ti bude slúžiť dlhšie, spoľahlivejšie a pri predaji získaš lepšiu cenu.</p>
+        <nav class="spat-nav" aria-label="Navigácia späť"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></nav>
+        </article>
+        <aside class="bocne bocne-pravy">
+            <p class="tip"><strong>Tip:</strong> Prečítaj si aj ostatné články blogu.</p>
+        </aside>
+    
+</script>
+<script id="template-article-4" type="text/template">
+        <aside class="bocne bocne-lavy">
+            <nav aria-label="Ďalšie články">
+                <h2>Ďalšie články</h2>
+                <ul class="bocne-zoznam">
+                    <li><a href="#article/1">Spoľahlivé autá</a></li>
+                    <li><a href="#article/2">Najlepšie autá</a></li>
+                    <li><a href="#article/3">Údržba auta</a></li>
+                    <li><a href="#article/4">Aký pohon si vybrať</a></li>
+                    <li><a href="#article/5">Zimné pneumatiky</a></li>
+                    <li><a href="#article/6">Hudba do auta</a></li>
+                    <li><a href="#article/7">5 športových áut</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+            <header class="hlavicka-clanku">
+                <h1>Benzín, diesel, hybrid alebo elektro? Aký pohon si vybrať</h1>
+            </header>
+            <p class="odsek">Pri kúpe auta dnes nestačí vybrať značku a farbu. Veľkou otázkou je aj pohon. Každý typ má svoje výhody a nevýhody a to najlepšie riešenie závisí od toho, koľko jazdíš a kde.</p>
+            <section>
+                <h2>Benzín a diesel</h2>
+                <p class="odsek">Benzínové motory sú jednoduchšie a lacnejšie na údržbu, preto sa hodia do mesta a na menšie nájazdy. Diesel sa oplatí pri veľkých ročných kilometroch, najmä na diaľniciach, kde má nízku spotrebu. Pri krátkych trasách sa však môže upchávať filter pevných častíc.</p>
+            </section>
+            <section>
+                <h2>Hybrid a elektromobil</h2>
+                <p class="odsek">Hybrid spája spaľovací motor s elektrickým a v meste ušetrí množstvo paliva. Elektromobil má najnižšie náklady na energiu a veľmi tichý chod, no vyžaduje možnosť nabíjania doma alebo v práci a pri dlhých cestách je potrebné plánovať zastávky.</p>
+            </section>
+            <section>
+                <h2>Porovnanie pohonov</h2>
+                <div class="tabulka">
+                    <table>
+                        <caption>Orientačné porovnanie typov pohonu</caption>
+                        <thead>
+                            <tr><th scope="col">Pohon</th><th scope="col">Výhoda</th><th scope="col">Nevýhoda</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="a"><strong>Benzín</strong></td><td>Nižšia cena a jednoduchá údržba</td><td>Vyššia spotreba na diaľnici</td></tr>
+                            <tr><td class="a"><strong>Diesel</strong></td><td>Nízka spotreba na dlhých trasách</td><td>Citlivý na krátke jazdy</td></tr>
+                            <tr><td class="a"><strong>Hybrid</strong></td><td>Úsporný v meste</td><td>Vyššia cena auta</td></tr>
+                            <tr><td class="a"><strong>Elektro</strong></td><td>Lacná a tichá prevádzka</td><td>Nabíjanie a dojazd</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td colspan="3">Údaje sú orientačné a líšia sa podľa konkrétneho modelu.</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <h2>Ako sa rozhodnúť?</h2>
+                <ol>
+                    <li>Spočítaj, koľko kilometrov ročne najazdíš.</li>
+                    <li>Zisti, či máš kde auto nabíjať alebo parkovať.</li>
+                    <li>Porovnaj celkové náklady, nielen kúpnu cenu.</li>
+                    <li>Vyskúšaj si auto na vlastnej trase.</li>
+                </ol>
+            </section>
+            <nav class="spat-nav" aria-label="Navigácia späť"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></nav>
+        </article>
+        <aside class="bocne bocne-pravy">
+            <p class="tip"><strong>Tip:</strong> Pri porovnaní áut sleduj celkové náklady na 5 rokov, nielen cenu pri kúpe.</p>
+        </aside>
+    
+</script>
+<script id="template-article-5" type="text/template">
+        <aside class="bocne bocne-lavy">
+            <nav aria-label="Ďalšie články">
+                <h2>Ďalšie články</h2>
+                <ul class="bocne-zoznam">
+                    <li><a href="#article/1">Spoľahlivé autá</a></li>
+                    <li><a href="#article/2">Najlepšie autá</a></li>
+                    <li><a href="#article/3">Údržba auta</a></li>
+                    <li><a href="#article/4">Aký pohon si vybrať</a></li>
+                    <li><a href="#article/5">Zimné pneumatiky</a></li>
+                    <li><a href="#article/6">Hudba do auta</a></li>
+                    <li><a href="#article/7">5 športových áut</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+            <header class="hlavicka-clanku">
+                <h1>Zimné pneumatiky: kedy ich prezuť a ako ich vybrať</h1>
+            </header>
+            <p class="odsek">Pneumatiky sú jediným kontaktom auta s vozovkou. Ich štyri plochy veľkosti dlane rozhodujú o tom, ako auto zrýchli, zabrzdí a prejde zákrutu. Práve preto na nich nemožno šetriť, najmä v zime, keď sa podmienky na ceste menia z hodiny na hodinu.</p>
+
+            <section>
+                <h2>Kedy prezúvať?</h2>
+                <p class="odsek">Zimné pneumatiky sa oplatí nasadiť, keď teplota dlhodobo klesne pod približne 7 °C. Pri nižších teplotách zmes letných pneumatík tvrdne a prilnavosť sa výrazne zhoršuje, aj keď na ceste nie je sneh ani ľad. Zimná zmes zostáva mäkká aj pri mraze, a preto lepšie drží na studenom asfalte.</p>
+                <p class="odsek">Na Slovensku platí povinnosť jazdiť na zimných pneumatikách, ak je vozovka súvislo pokrytá snehom, ľadom alebo námrazou. Praktické pravidlo je jednoduché: prezúvaj na jeseň s prvými ranými mrazmi a na jar až keď sa teploty stabilne držia nad 7 °C.</p>
+            </section>
+
+            <section>
+                <h2>Z čoho sa pneumatika skladá</h2>
+                <figure>
+                    <img src="fig/pneu-rez.svg" alt="Schéma pneumatiky s popisom dezénu, nárazníka, bočnice a ráfika" class="obrazok1" width="640" height="360" loading="lazy">
+                    <figcaption>Základné časti pneumatiky: dezén, nárazník, bočnica a ráfik.</figcaption>
+                </figure>
+                <p class="odsek">Dezén je časť, ktorá sa dotýka vozovky a odvádza vodu a sneh. Pod ním sú oceľové pásy, ktoré držia tvar pneumatiky, a po stranách bočnice, ktoré prenášajú sily pri zatáčaní.</p>
+            </section>
+
+            <section>
+                <h2>Letná, zimná alebo celoročná?</h2>
+                <figure>
+                    <img src="fig/pneu-dezeny.svg" alt="Porovnanie dezénu letnej, zimnej a celoročnej pneumatiky" class="obrazok1" width="720" height="300" loading="lazy">
+                    <figcaption>Letný dezén má široké drážky, zimný množstvo jemných lamiel a celoročný je kompromis.</figcaption>
+                </figure>
+                <div class="tabulka">
+                    <table>
+                        <caption>Porovnanie typov pneumatík</caption>
+                        <thead>
+                            <tr><th scope="col">Vlastnosť</th><th scope="col">Zimná</th><th scope="col">Celoročná</th><th scope="col">Letná</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="a"><strong>Optimálna teplota</strong></td><td>pod 7 °C</td><td>-5 až 25 °C</td><td>nad 7 °C</td></tr>
+                            <tr><td class="a"><strong>Sneh a ľad</strong></td><td>výborná</td><td>priemerná</td><td>nevhodná</td></tr>
+                            <tr><td class="a"><strong>Suchá vozovka v lete</strong></td><td colspan="2">horšia, rýchlejšie sa opotrebuje</td><td>výborná</td></tr>
+                            <tr><td class="a"><strong>Cena a nákup</strong></td><td rowspan="2">dve sady = vyššie náklady, výmena dvakrát ročne</td><td>jedna sada, nižšie náklady</td><td rowspan="2">lacnejšie, hodí sa pri ročnom prezúvaní</td></tr>
+                            <tr><td class="a"><strong>Pohodlie</strong></td><td>kompromis</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td colspan="4">Údaje sú orientačné a líšia sa podľa výrobcu a modelu.</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p class="odsek">Celoročné pneumatiky sú rozumná voľba pre vodičov, ktorí jazdia hlavne po meste a v nížinách. Ak jazdíš v horách alebo často vyrážaš za sneh, zimné pneumatiky sú bezpečnejšie.</p>
+            </section>
+
+            <section>
+                <h2>Prečo na zimných pneumatikách záleží</h2>
+                <figure>
+                    <img src="fig/brzdna-draha.svg" alt="Stĺpcový graf brzdnej dráhy na snehu pre zimnú, celoročnú a letnú pneumatiku" class="obrazok1" width="640" height="320" loading="lazy">
+                    <figcaption>Orientačná brzdná dráha z 50 km/h na snehu: rozdiel medzi zimnou a letnou pneumatikou je viac ako dvojnásobný.</figcaption>
+                </figure>
+                <p class="odsek">Rozdiel v brzdnej dráhe môže byť desiatky metrov. Pri rýchlosti 50 km/h to znamená, že auto na letných pneumatikách ešte ide rýchlosťou, pri ktorej auto na zimných už stojí.</p>
+            </section>
+
+            <section>
+                <h2>Na čo sa pozrieť pri kúpe</h2>
+                <ul>
+                    <li><strong>Označenie:</strong> hľadaj symbol snehovej vločky v hore (3PMSF), ktorý potvrdzuje skutočnú zimnú pneumatiku.</li>
+                    <li><strong>Dezén:</strong> zákonné minimum je 3 mm, odporúča sa však 4 mm a viac.</li>
+                    <li><strong>Rok výroby:</strong> kód DOT udáva týždeň a rok, pneumatiky staršie ako 6 rokov radšej nekupuj.</li>
+                    <li><strong>Rozmer:</strong> musí zodpovedať údajom v technickom preukaze.</li>
+                    <li><strong>Test:</strong> pozri si nezávislé testy pneumatík, kde sa porovnáva brzdenie, hluk aj spotreba.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Ako čítať označenie na boku</h2>
+                <p class="odsek">Na bočnici pneumatiky nájdeš kód, napríklad <strong>205/55 R16 91 H</strong>. Znamená:</p>
+                <ol>
+                    <li><strong>205</strong> - šírka pneumatiky v milimetroch.</li>
+                    <li><strong>55</strong> - výška bočnice v percentách šírky.</li>
+                    <li><strong>R16</strong> - radiálna konštrukcia a priemer ráfika v palcoch.</li>
+                    <li><strong>91</strong> - index nosnosti (615 kg na pneumatiku).</li>
+                    <li><strong>H</strong> - rýchlostný index (do 210 km/h).</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Starostlivosť a skladovanie</h2>
+                <p class="odsek">Pneumatiky skladuj na suchom a chladnom mieste mimo priameho slnka a chemikálií. Pred uložením ich umy a označ si polohu na aute (PP, ZP, PZ, ZZ). Zložené kolesá na diskoch ukladaj naležato na seba alebo ich zavesiť, samotné pneumatiky postav na behúň.</p>
+                <p class="odsek">Dvakrát ročne nechaj kolesá vyvážiť a pravidelne kontroluj tlak, ktorý sa pri poklese teploty o 10 °C zníži približne o 0,1 bar. Po prvých 500 km po prezutí dotiahni kolesové skrutky.</p>
+            </section>
+
+            <section>
+                <h2>Najčastejšie chyby</h2>
+                <ul>
+                    <li>Mixovanie rôznych typov a značiek na jednej náprave.</li>
+                    <li>Jazda na prestarých pneumatikách s tvrdnúcou zmesou.</li>
+                    <li>Zanedbaný tlak a nevyvážené kolesá.</li>
+                    <li>Odkladanie prezutia, až kým nenapadne sneh.</li>
+                </ul>
+            </section>
+            <nav class="spat-nav" aria-label="Navigácia späť"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></nav>
+        </article>
+        <aside class="bocne bocne-pravy">
+            <p class="tip"><strong>Tip:</strong> Tlak v pneumatikách kontroluj aspoň raz za mesiac, najlepšie za studena.</p>
+        </aside>
+    
+</script>
+<script id="template-article-6" type="text/template">
+        <aside class="bocne bocne-lavy">
+            <nav aria-label="Ďalšie články">
+                <h2>Ďalšie články</h2>
+                <ul class="bocne-zoznam">
+                    <li><a href="#article/1">Spoľahlivé autá</a></li>
+                    <li><a href="#article/2">Najlepšie autá</a></li>
+                    <li><a href="#article/3">Údržba auta</a></li>
+                    <li><a href="#article/4">Aký pohon si vybrať</a></li>
+                    <li><a href="#article/5">Zimné pneumatiky</a></li>
+                    <li><a href="#article/6">Hudba do auta</a></li>
+                    <li><a href="#article/7">5 športových áut</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+            <header class="hlavicka-clanku">
+                <h1>Hudba do auta: čo si pustiť na dlhú cestu</h1>
+            </header>
+            <p class="odsek">Dobrá hudba dokáže z obyčajnej jazdy urobiť zážitok. Pri dlhých cestách pomáha udržať dobrú náladu aj pozornosť, v meste zase skráti čas strávený v kolóne. Aj preto sa oplatí mať pripravený zoznam skladieb, ktorý sa príjemne počúva počas jazdy.</p>
+
+            <section>
+                <h2>Album, ktorý odporúčam do auta</h2>
+                <p class="odsek">Tento album od môjho učiteľa na Spotify odporúčam na počúvanie v aute. Je to dobrý výber na bežné jazdenie aj na dlhšie trasy, keďže sa dá pustiť celý naraz a nemusíš sa pri šoférovaní starať o prepínanie skladieb. Môžeš si ho vypočuť priamo tu na stránke:</p>
+                <div class="spotify">
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3WdzaarK08mNFFcgCHOntD?utm_source=generator&amp;theme=0&amp;si=022834f27ab2401d" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Odporúčaný album na počúvanie v aute na Spotify"></iframe>
+                </div>
+            </section>
+
+            <section>
+                <h2>Ako počúvať hudbu pri šoférovaní</h2>
+                <ul>
+                    <li><strong>Hlasitosť:</strong> nastav ju tak, aby si počul okolitú premávku, najmä sirény.</li>
+                    <li><strong>Zoznam skladieb:</strong> priprav si ho pred jazdou, počas jazdy nepíš do telefónu.</li>
+                    <li><strong>Pripojenie:</strong> použi Bluetooth alebo kábel a ovládaj prehrávanie volantom alebo hlasom.</li>
+                    <li><strong>Stiahnutá hudba:</strong> pre prípad slabého signálu si stiahni skladby offline.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Aká hudba sa hodí na ktorú jazdu</h2>
+                <div class="tabulka">
+                    <table>
+                        <caption>Tipy na hudbu podľa typu jazdy</caption>
+                        <thead>
+                            <tr><th scope="col">Typ jazdy</th><th scope="col">Vhodná nálada</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="a"><strong>Ranná cesta do práce</strong></td><td>Pokojná a povzbudivá hudba</td></tr>
+                            <tr><td class="a"><strong>Dlhá cesta po diaľnici</strong></td><td>Dlhšie albumy a rytmická hudba</td></tr>
+                            <tr><td class="a"><strong>Večerná jazda</strong></td><td>Pokojnejšie skladby</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr><td colspan="2">Ide o osobné odporúčania, vkus je individuálny.</td></tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Na záver</h2>
+                <p class="odsek">Hudba nemá šoféra rozptyľovať, ale pomáhať mu. Vyskúšaj odporúčaný album na najbližšej ceste a uvidíš, ako rýchlo cesta ubehne.</p>
+            </section>
+            <nav class="spat-nav" aria-label="Navigácia späť"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></nav>
+        </article>
+        <aside class="bocne bocne-pravy">
+            <p class="tip"><strong>Tip:</strong> Pred jazdou si nastav hudbu, počas jazdy sa sústreď na cestu.</p>
+        </aside>
+    
+</script>
+
+<script id="template-article-7" type="text/template">
+        <aside class="bocne bocne-lavy">
+            <nav aria-label="Ďalšie články">
+                <h2>Ďalšie články</h2>
+                <ul class="bocne-zoznam">
+                    <li><a href="#article/1">Spoľahlivé autá</a></li>
+                    <li><a href="#article/2">Najlepšie autá</a></li>
+                    <li><a href="#article/3">Údržba auta</a></li>
+                    <li><a href="#article/4">Aký pohon si vybrať</a></li>
+                    <li><a href="#article/5">Zimné pneumatiky</a></li>
+                    <li><a href="#article/6">Hudba do auta</a></li>
+                    <li><a href="#article/7">5 športových áut</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+            <header class="hlavicka-clanku">
+                <h1>5 športových áut, ktoré si zapamätáš aj ušami</h1>
+            </header>
+            <p class="odsek">Športové auto nie je len o rýchlosti. Je to aj o zvuku, ktorý ti zježí chlpy na rukách ešte skôr, než sa rozbehne. Vybrali sme päť modelov, pri ktorých sa oplatí zapnúť reproduktory. Pri každom nájdeš tlačidlo <strong>Naštartovať motor</strong> a karta s autom sa pri ňom poriadne rozvibruje.</p>
+
+            <section class="auto-karta" id="auto-porsche">
+                <h2>1. Porsche 911 GT3</h2>
+                <p class="auto-podtitul">Atmosférický boxer, ktorý točí do 9 000 otáčok</p>
+                <figure>
+                    <img src="fig/sport-porsche.jpg" alt="Porsche 911 GT3 na ceste" class="obrazok1" width="800" height="450" loading="lazy">
+                </figure>
+                <ul class="auto-spec"><li><strong>Motor:</strong> 4,0 l atmosférický boxer, 6 valcov</li><li><strong>Výkon:</strong> približne 510 k</li><li><strong>0 – 100 km/h:</strong> okolo 3,4 s</li></ul>
+                <p class="odsek">GT3 je pripomienkou, že vysoké otáčky a priamy kontakt s cestou sú stále to najlepšie, čo vie ponúknuť jazda. Zadný motor, ostrý zvuk a presné riadenie z neho robia auto, ktoré sa dá používať aj na bežnej ceste, nielen na okruhu.</p>
+                <button type="button" class="btn-motor" data-sound="audio/porsche.mp3" aria-pressed="false">
+                    <span class="btn-motor-ikona" aria-hidden="true">&#128266;</span>
+                    <span class="btn-motor-text">Naštartovať motor</span>
+                </button>
+            </section>
+
+            <section class="auto-karta" id="auto-gtr">
+                <h2>2. Nissan GT-R</h2>
+                <p class="auto-podtitul">Japonský „Godzilla“ s pohonom všetkých kolies</p>
+                <figure>
+                    <img src="fig/sport-gtr.jpg" alt="Nissan GT-R na ceste" class="obrazok1" width="800" height="450" loading="lazy">
+                </figure>
+                <ul class="auto-spec"><li><strong>Motor:</strong> 3,8 l biturbo V6</li><li><strong>Výkon:</strong> približne 570 k</li><li><strong>0 – 100 km/h:</strong> okolo 3 s</li></ul>
+                <p class="odsek">GT-R (R35) vyšlo prvýkrát v roku 2007 a stále patrí medzi najrýchlejšie autá svojej cenovej kategórie. Zvláštnosťou je dômyselný pohon všetkých kolies, vďaka ktorému auto zrýchľuje aj po mokrej ceste. Zvuk je hlbší a surovší než u talianskych súperov.</p>
+                <button type="button" class="btn-motor" data-sound="audio/gtr.mp3" aria-pressed="false">
+                    <span class="btn-motor-ikona" aria-hidden="true">&#128266;</span>
+                    <span class="btn-motor-text">Naštartovať motor</span>
+                </button>
+            </section>
+
+            <section class="auto-karta" id="auto-huracan">
+                <h2>3. Lamborghini Huracán</h2>
+                <p class="auto-podtitul">Taliansky V10, ktorý spieva ako závodné auto</p>
+                <figure>
+                    <img src="fig/sport-huracan.jpg" alt="Lamborghini Huracán na ceste" class="obrazok1" width="800" height="450" loading="lazy">
+                </figure>
+                <ul class="auto-spec"><li><strong>Motor:</strong> 5,2 l atmosférický V10</li><li><strong>Výkon:</strong> približne 640 k (verzia EVO)</li><li><strong>0 – 100 km/h:</strong> okolo 2,9 s</li></ul>
+                <p class="odsek">Huracán patrí medzi posledné superšport autá s veľkým atmosférickým desaťvalcom. Ostrý, vysoký zvuk motora je jeho najväčšia zbraň. Pohon všetkých kolies a agresívny dizajn z neho robia auto, ktoré upúta pozornosť na prvý pohľad aj počutie.</p>
+                <button type="button" class="btn-motor" data-sound="audio/huracan.mp3" aria-pressed="false">
+                    <span class="btn-motor-ikona" aria-hidden="true">&#128266;</span>
+                    <span class="btn-motor-text">Naštartovať motor</span>
+                </button>
+            </section>
+
+            <section class="auto-karta" id="auto-mustang">
+                <h2>4. Ford Mustang GT</h2>
+                <p class="auto-podtitul">Americký V8 za pomerne dostupnú cenu</p>
+                <figure>
+                    <img src="fig/sport-mustang.jpg" alt="Ford Mustang GT na ceste" class="obrazok1" width="800" height="450" loading="lazy">
+                </figure>
+                <ul class="auto-spec"><li><strong>Motor:</strong> 5,0 l atmosférický V8</li><li><strong>Výkon:</strong> približne 450 k</li><li><strong>0 – 100 km/h:</strong> okolo 4,5 s</li></ul>
+                <p class="odsek">Mustang je legenda, ktorá ponúka veľký V8 a pohon zadných kolies za zlomok ceny európskych superaut. Zvuk je hlboký a dunivý, presne taký, aký od amerického svalového auta čakáš. Je to ideálna voľba pre tých, ktorí chcú zážitok bez astronomickej ceny.</p>
+                <button type="button" class="btn-motor" data-sound="audio/mustang.mp3" aria-pressed="false">
+                    <span class="btn-motor-ikona" aria-hidden="true">&#128266;</span>
+                    <span class="btn-motor-text">Naštartovať motor</span>
+                </button>
+            </section>
+
+            <section class="auto-karta" id="auto-ferrari">
+                <h2>5. Ferrari F8 Tributo</h2>
+                <p class="auto-podtitul">Biturbo V8, ktoré sa točí ako atmosférik</p>
+                <figure>
+                    <img src="fig/sport-ferrari.jpg" alt="Ferrari F8 Tributo na ceste" class="obrazok1" width="800" height="450" loading="lazy">
+                </figure>
+                <ul class="auto-spec"><li><strong>Motor:</strong> 3,9 l biturbo V8</li><li><strong>Výkon:</strong> približne 720 k</li><li><strong>0 – 100 km/h:</strong> okolo 2,9 s</li></ul>
+                <p class="odsek">F8 Tributo je nástupca modelu 488 a jeho motor patrí medzi najuznávanejšie ôsmičky súčasnosti. Aj keď má dva turbá, reaguje na plyn bleskovo a vo vysokých otáčkach znie ako klasické ferrari. Je to auto, ktoré dokazuje, že turbo nemusí zabiť charakter.</p>
+                <button type="button" class="btn-motor" data-sound="audio/ferrari.mp3" aria-pressed="false">
+                    <span class="btn-motor-ikona" aria-hidden="true">&#128266;</span>
+                    <span class="btn-motor-text">Naštartovať motor</span>
+                </button>
+            </section>
+
+            <section>
+                <h2>Na záver</h2>
+                <p class="odsek">Každé z týchto áut je iné: boxer, V6, V8 aj V10, atmosférik aj turbo. Spoločné majú to, že jazda v nich je zážitok. Ktoré z nich by si si vybral ty? Napíš nám to do <a href="#addOpinion" class="spat">názorov</a>.</p>
+                <p class="odsek poznamka-zvuk">Pozn.: zvuky na stránke sú ilustračné a nie sú nahrávkou skutočných áut. Údaje o výkone a zrýchlení sú orientačné a líšia sa podľa verzie a modelového roka.</p>
+            </section>
+            <nav class="spat-nav" aria-label="Navigácia späť"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></nav>
+        </article>
+        <aside class="bocne bocne-pravy">
+            <p class="tip"><strong>Tip:</strong> Pre ten správny zážitok si zapni zvuk a nezabudni, že na bežnej ceste platia rýchlostné limity.</p>
+        </aside>
+</script>
+
+
+    <script id="template-kontakt" type="text/template">
+        <h1>Kontakt</h1>
+        <p class="odsek">Máš otázku alebo tip na článok? Napíš na <a href="mailto:martin.kamensky@student.tuke.sk" class="spat">martin.kamensky@student.tuke.sk</a>.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d657.8736531939285!2d21.24578705311049!3d48.73424784340406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ee05f22c3ad75%3A0x8dc7b6a01e98a9f7!2sTechnick%C3%A1%20univerzita%20v%20Ko%C5%A1iciach!5e0!3m2!1ssk!2ssk!4v1792781593720!5m2!1ssk!2ssk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <p class="odsek"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></p>
+    
+    </script>
+
+    <script id="template-ochrana" type="text/template">
+        <h1>Ochrana súkromia</h1>
+        <p class="odsek">Blog je statický, nezbiera žiadne osobné údaje a nepoužíva cookies.</p>
+        <p class="odsek"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></p>
+    
+    </script>
+
+    <script id="template-opinions" type="text/template">
+        <h1>Názory návštevníkov</h1>
+        {{#.}}
+        <section class="nazor">
+            <h2>{{name}} <i>{{createdDate}}</i></h2>
+            {{#image}}<img src="{{image}}" alt="Auto od {{name}}" loading="lazy">{{/image}}
+            <p>{{comment}}</p>
+            <p class="meta">E-mail: <a href="mailto:{{email}}">{{email}}</a></p>
+            <p class="meta">Pohon: {{drive}}{{#keyword}} · Kľúčové slovo: {{keyword}}{{/keyword}}</p>
+            <p class="meta">{{willReturnMessage}}</p>
+        </section>
+        {{/.}}
+        {{^.}}
+        <p class="odsek">Zatiaľ tu nie sú žiadne názory. <a href="#addOpinion">Buď prvý!</a></p>
+        {{/.}}
+    </script>
+
+    <script id="template-opinions-welcome" type="text/template">
+        {{#.}}
+        <section class="nazor">
+            <h3>{{name}} <i>{{createdDate}}</i></h3>
+            {{#image}}<img src="{{image}}" alt="Auto od {{name}}" loading="lazy">{{/image}}
+            <p>{{comment}}</p>
+            <p class="meta">E-mail: <a href="mailto:{{email}}">{{email}}</a></p>
+            <p class="meta">Pohon: {{drive}}{{#keyword}} · Kľúčové slovo: {{keyword}}{{/keyword}}</p>
+            <p class="meta">{{willReturnMessage}}</p>
+        </section>
+        {{/.}}
+        {{^.}}
+        <p class="odsek">Zatiaľ tu nie sú žiadne názory. <a href="#addOpinion">Buď prvý!</a></p>
+        {{/.}}
+    </script>
+
+    <script id="template-addOpinion" type="text/template">
+        <h1>Váš názor</h1>
+        <form id="opnFrm" class="formular">
                 <label for="nameElm">Meno</label>
                 <input type="text" id="nameElm" name="meno" maxlength="50" placeholder="Ako sa voláš?" required>
 
@@ -108,41 +711,35 @@
                     <button type="reset">Vymazať</button>
                 </div>
             </form>
-
-            <h2>Názory návštevníkov</h2>
-            <div id="opinionsContainer" class="nazory"></div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-obsah">
-            <p>&copy; 2026 koleso. motoristický blog. Všetky práva vyhradené.</p>
-
-            <div class="footer-odkazy">
-                <a href="ochranasukromia.html">Ochrana súkromia</a>
-                <a href="kontakty.html">Kontakt</a>
-            </div>
-
-            <div class="footer-validatory">
-                <a href="https://validator.w3.org/check?uri=https://deresko.github.io/koleso.---motoristick-blog/" target="_blank" rel="noopener">
-                    <img src="https://www.w3.org/Icons/valid-html401" alt="Valid HTML" width="88" height="31">
-                </a>
-                <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://deresko.github.io/koleso.---motoristick-blog/screenStyle.css" target="_blank" rel="noopener">
-                    <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS" width="88" height="31">
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script id="mTmplOneOpinion" type="text/template">
-        <section class="nazor">
-            <h3>{{name}} <i>{{createdDate}}</i></h3>
-            {{#image}}<img src="{{image}}" alt="Auto od {{name}}" loading="lazy">{{/image}}
-            <p>{{comment}}</p>
-            <p class="meta">Pohon: {{drive}}{{#keyword}} · Kľúčové slovo: {{keyword}}{{/keyword}}</p>
-            <p class="meta">{{willReturnMessage}}</p>
-        </section>
     </script>
-    <script type="module" src="js/main.js"></script>
+
+    <script id="template-articles" type="text/template">
+        <h1>Články zo servera</h1>
+        <p class="odsek">Strana {{currPage}} z {{pageCount}} (spolu {{totalCount}} článkov).</p>
+        {{#articles}}
+        <section class="nazor">
+            <h2>{{title}}</h2>
+            <p class="meta">autor: {{author}}</p>
+        </section>
+        {{/articles}}
+        <p class="strankovanie">
+            {{#prevPage}}<a href="#articles/{{prevPage}}">&laquo; Predchádzajúca (Previous)</a>{{/prevPage}}
+            {{#nextPage}}<a href="#articles/{{nextPage}}">Ďalšia (Next) &raquo;</a>{{/nextPage}}
+        </p>
+    </script>
+
+    <script id="template-articles-error" type="text/template">
+        <h1>Články sa nepodarilo načítať</h1>
+        <p class="odsek">{{errMessage}}</p>
+        <p class="odsek"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></p>
+    </script>
+
+    <script id="template-notfound" type="text/template">
+        <h1>Stránka sa nenašla</h1>
+        <p class="odsek"><a href="#welcome" class="spat">&larr; Späť na hlavnú stránku</a></p>
+    </script>
+
+    <script src="js/mustache.min.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>
