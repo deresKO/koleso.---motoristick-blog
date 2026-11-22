@@ -1,14 +1,10 @@
-/*
- * Trieda OpinionsHandler: načítanie, uloženie a zobrazenie názorov návštevníkov.
- * Údaje sa ukladajú do window.localStorage, HTML sa vyrába pomocou šablónových literálov
- * (template literals). Potomok OpinionsHandlerMustache používa namiesto nich šablónu Mustache.
- */
+
 export default class OpinionsHandler {
 
     /**
-     * @param {string} opinionsFormElmId  id formulára pre nový názor (vkladá sa až po prechode na trasu)
-     * @param {string} opinionsListElmId  id elementu, do ktorého sa vykresľujú názory
-     * @param {string} storageKey         kľúč v localStorage
+     * @param {string} opinionsFormElmId
+     * @param {string} opinionsListElmId
+     * @param {string} storageKey
      */
     constructor(opinionsFormElmId, opinionsListElmId, storageKey = "kolesoComments") {
         this.opinionsFormElmId = opinionsFormElmId;
@@ -17,15 +13,11 @@ export default class OpinionsHandler {
         this.opinions = [];
     }
 
-    /**
-     * Cieľový element sa hľadá až pri použití, lebo ho router do stránky vkladá dynamicky
-     * (napr. #welcome-opinions vzniká až po zobrazení úvodnej stránky).
-     */
+
     get opinionsElm() {
         return document.getElementById(this.opinionsListElmId);
     }
 
-    /** Načíta uložené názory do poľa opinions. */
     init() {
         this.opinions = this.loadOpinions();
     }
@@ -48,7 +40,6 @@ export default class OpinionsHandler {
 
     // ---------- zobrazenie ----------
 
-    /** Vykreslí všetky názory do cieľového elementu. */
     showOpinions() {
         this.opinions = this.loadOpinions();
         const elm = this.opinionsElm;
@@ -57,7 +48,6 @@ export default class OpinionsHandler {
         }
     }
 
-    /** Údaje určené len na zobrazenie; pôvodný objekt sa nemení. */
     opinion2view(opinion) {
         return {
             name: opinion.name,
@@ -73,7 +63,6 @@ export default class OpinionsHandler {
         };
     }
 
-    /** Ochrana pred vložením HTML z formulára (šablónové literály nič neescapujú). */
     escapeHtml(text) {
         return String(text ?? "")
             .replace(/&/g, "&amp;")
@@ -83,7 +72,7 @@ export default class OpinionsHandler {
             .replace(/'/g, "&#39;");
     }
 
-    /** HTML jedného názoru (šablónový literál). */
+
     opinion2html(opinion) {
         const v = this.opinion2view(opinion);
         const e = text => this.escapeHtml(text);
@@ -99,7 +88,7 @@ export default class OpinionsHandler {
         </section>`;
     }
 
-    /** HTML celej stránky s názormi (nadpis + zoznam, prípadne hláška o prázdnom zozname). */
+
     opinionArray2html(sourceData) {
         const list = sourceData.reduce((html, opn) => html + this.opinion2html(opn), "");
         const empty = `<p class="odsek">Zatiaľ tu nie sú žiadne názory. <a href="#addOpinion">Buď prvý!</a></p>`;
@@ -109,13 +98,13 @@ export default class OpinionsHandler {
 
     // ---------- formulár ----------
 
-    /** Pripojí spracovanie odoslania na formulár, ktorý je práve vložený do stránky. */
+
     bindForm() {
         const form = document.getElementById(this.opinionsFormElmId);
         form.addEventListener("submit", event => this.processOpnFrmData(event));
     }
 
-    /** Prečíta údaje z formulára, uloží ich do poľa opinions a do localStorage. */
+
     processOpnFrmData(event) {
         event.preventDefault();
         const f = event.target;
@@ -125,7 +114,7 @@ export default class OpinionsHandler {
             email: f.elements["email"].value.trim(),
             image: f.elements["obrazok"].value.trim(),
             keyword: f.elements["kluc"].value.trim(),
-            drive: f.elements["pohon"].value,          // radio skupina = jedna položka
+            drive: f.elements["pohon"].value,
             comment: f.elements["komentar"].value.trim(),
             willReturn: f.elements["vratim"].checked,
             created: new Date()
@@ -135,6 +124,6 @@ export default class OpinionsHandler {
         this.opinions.push(newOpinion);
         this.saveOpinions();
 
-        window.location.hash = "opinions";             // po odoslaní prejdi na zoznam názorov
+        window.location.hash = "opinions";
     }
 }

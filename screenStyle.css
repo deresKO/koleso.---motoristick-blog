@@ -1044,7 +1044,9 @@ img, svg {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.auto-karta figure { margin: 1rem 0; }
+.auto-karta figure { 
+    margin: 1rem 0; 
+}
 
 .auto-podtitul {
     color: var(--zlta);
@@ -1052,10 +1054,20 @@ img, svg {
     margin-bottom: 0.5rem;
 }
 
-.auto-spec { list-style: none; margin: 0 0 1rem; }
-.auto-spec li { margin-left: 0; padding: 0.1875rem 0; }
+.auto-spec { 
+    list-style: none; 
+    margin: 0 0 1rem; 
+}
 
-.poznamka-zvuk { font-size: 0.875rem; font-weight: 200; }
+.auto-spec li { 
+    margin-left: 0; 
+    padding: 0.1875rem 0; 
+}
+
+.poznamka-zvuk { 
+    font-size: 0.875rem; 
+    font-weight: 200; 
+}
 
 .btn-motor {
     display: inline-flex;
@@ -1075,18 +1087,29 @@ img, svg {
     transition: filter 0.2s ease, transform 0.1s ease;
 }
 
-.btn-motor:hover { filter: brightness(1.12); }
-.btn-motor:active { transform: scale(0.97); }
-.btn-motor:focus-visible { outline: 0.1875rem solid var(--biela); outline-offset: 0.25rem; }
+.btn-motor:hover { 
+    filter: brightness(1.12); 
+}
 
-/* karta sa trasie, kým motor beží (trieda sa pridáva z js/engine.js) */
+.btn-motor:active { 
+    transform: scale(0.97);
+}
+
+.btn-motor:focus-visible { 
+    outline: 0.1875rem solid var(--biela); 
+    outline-offset: 0.25rem; 
+}
+
+/*---------------karta sa trasie-----------*/
 .auto-karta.vibruje {
     border-color: var(--zlta);
     box-shadow: 0 0 1.5rem rgba(255, 194, 14, 0.45);
     animation: motor-vibracie 0.09s linear infinite;
 }
 
-.auto-karta.vibruje .btn-motor-ikona { animation: motor-pulz 0.3s ease-in-out infinite alternate; }
+.auto-karta.vibruje .btn-motor-ikona { 
+    animation: motor-pulz 0.3s ease-in-out infinite alternate; 
+}
 
 @keyframes motor-vibracie {
     0%   { transform: translate(0, 0) rotate(0); }

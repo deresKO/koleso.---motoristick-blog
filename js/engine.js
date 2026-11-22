@@ -1,11 +1,6 @@
-/*
- * Zvuk motora v článku o športových autách (#article/7).
- * Karty sa do stránky vkladajú dynamicky cez router, preto sa používa delegovanie udalostí:
- * jeden listener na dokumente, ktorý zachytí kliknutie na akékoľvek tlačidlo .btn-motor.
- * Kým zvuk hrá, karta má triedu "vibruje" (CSS animácia @keyframes motor-vibracie).
- */
-const sounds = {};      // cache audio objektov podľa adresy súboru
-let playing = null;     // { audio, card, btn } práve hrajúci motor
+/*---------------------Zvuky motora---------------------*/
+const sounds = {};
+let playing = null;
 
 function stop() {
     if (!playing) return;
@@ -24,8 +19,8 @@ document.addEventListener("click", event => {
 
     const card = btn.closest(".auto-karta");
     const wasThis = playing && playing.btn === btn;
-    stop();                       // vždy beží len jeden motor
-    if (wasThis) return;          // druhé kliknutie na ten istý motor ho vypne
+    stop();
+    if (wasThis) return;
 
     const src = btn.dataset.sound;
     const audio = sounds[src] || (sounds[src] = new Audio(src));
@@ -42,5 +37,5 @@ document.addEventListener("click", event => {
     });
 });
 
-// pri zmene trasy sa motor vypne
+
 window.addEventListener("hashchange", stop);
